@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #ffffc8;
+    font-family: "Press Start 2P", sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    background: #00008b;
+    padding: 1em;
+}
+
+main {
+    flex: 1;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+section:first-child {
+    margin: 4em;
+    width: calc(100% - 8em - 2em);
+    height: calc(100% - 8em - 2em);
+    border: solid 1em #ffffc8;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    cursor: none;
+}
+
+section:first-child > div:first-child {
+    width: 100%;
+    position: relative;
+}
+
+section:first-child > div > div {
+    width: 1em;
+    margin: 0 1em;
+}
+
+section:first-child > div:last-child, section:first-child > div > div {
+    background-color: #ffffc8;
+    position: absolute;
+    pointer-events: none;
+}
+
+#ball {
+    width: 1em;
+    height: 1em;
+}
+
+#you {
+    right: 0;
+    top: 50%
+}
+
+#other {
+    left: 0;
+    top: 50%
+}
+
+section:not(:first-child):not(:last-child) {
+    position: absolute;
+    top: 0;
+    width: calc(50% - .5em);
+    height: calc(100% - 8em);
+    border-right: dashed 1em #ffffc8;
+    margin: 4em 0 4em 0;
+    pointer-events: none;
+}
+
+section:last-child {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+}
+
+section:last-child > div {
+    padding: .5em;
+    font-size: 3em;
+}
+
+section:last-child > div:first-child {
+    margin-right: calc(.5em / 3);
+}
+
+section:last-child > div:last-child {
+    margin-left: calc(.5em / 3);
+}
+
+footer {
+    background: #373737;
+    padding: .5em;
+    text-align: center;
+}
+
+footer p {
+    color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+    header {
+        padding: .5em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: .7em;
+    }
+
+    section:first-child {
+        margin: 1em;
+        width: calc(100% - 2em - 2em);
+        height: calc(100% - 2em - 2em);
+    }
+
+    section:last-child {
+        margin-top: 1em;
+    }
+
+    section:not(:first-child):not(:last-child) {
+        height: calc(100% - 2em);
+        margin: 1em 0 1em 0;
+    }
+}
